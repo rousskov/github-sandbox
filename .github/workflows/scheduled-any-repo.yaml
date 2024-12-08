@@ -7,7 +7,7 @@ name: Scheduled Tests
 
 on:
   schedule:
-    - cron: "9 19 * * 0"
+    - cron: "15 19 * * 0"
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -17,7 +17,7 @@ jobs:
   coverity-scan:
     name: Scan with Coverity
     # only run the workflow on Squid's main repository
-    if: github.repository == 'squid-cache/squid'
+    # if: github.repository == 'squid-cache/squid'
 
     runs-on: ubuntu-22.04
     # this job only runs if the github repository contains username
